@@ -4,6 +4,6 @@
 
 [![](https://repl.it/badge/github/KennyOliver/repl-name)](https://repl.it/@KennyOliver/bookshop-inventory)
 
-Inventory for a bookshop
+:classical_building: Inventory for a bookshop
 
 Kenny Oliver ©2021
