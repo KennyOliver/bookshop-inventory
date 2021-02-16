@@ -22,7 +22,7 @@ def menu():
     books_in_stock = int(values[0])
     books_lended = int(values[1])
   
-  print("Pick action:\n\t[R] Return\n\t[L] Lend\n\t[S] View Stats")
+  print("\nPick action:\n\t[R] Return\n\t[L] Lend\n\t[S] View Stats")
   option = input("--> ").upper()
   
   while option not in ['R','L','S']:
@@ -54,11 +54,12 @@ def write_data(new_stocking,new_lending):
   stats_file.close()
 #====================
 # main program
+print("Library/Bookshop Inventory Management")
 option = 'Y'
 while option in ['Y','YES']:
   menu()
+  print("\n")
   option = input("Would you like to rerun the application?\n\t[Y] Yes\n\t[N] No\n\t--> ").upper()
 print("Program terminated.")
-
 
 stats_file.close()
