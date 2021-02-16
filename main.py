@@ -1,13 +1,13 @@
 def book_return(books_in_stock,books_lended,quantity):
-  new_stock_value = books_in_stock - quantity
-  books_lended -= quantity
-  vals = [new_stock_value, books_lended]
+  new_stock_value = books_in_stock + quantity
+  new_lend_value = books_lended - quantity
+  vals = [new_stock_value, new_lend_value]
   return vals
 #====================
 def book_lend(books_in_stock,books_lended,quantity):
   new_stock_value = books_in_stock - quantity
-  books_lended += quantity
-  vals = [new_stock_value, books_lended]
+  new_lend_value = books_lended + quantity
+  vals = [new_stock_value, new_lend_value]
   return vals
 #====================
 def view_stats(books_in_stock,books_lended):
@@ -33,8 +33,8 @@ def menu(books_in_stock,books_lended):
     quantity = int(input("Enter the quantity of books to be lended\n--> "))
     while type(quantity) != int:
       quantity = int(input("Enter the quantity of books to be lended\n--> "))
-    new_stocking = book_return(books_in_stock,books_lended,quantity)[0]
-    new_lending = book_return(books_in_stock,books_lended,quantity)[1]
+    new_stocking = book_lend(books_in_stock,books_lended,quantity)[0]
+    new_lending = book_lend(books_in_stock,books_lended,quantity)[1]
     write_data(new_stocking,new_lending)
 
   elif option == 'S':
