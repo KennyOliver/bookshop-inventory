@@ -1,7 +1,8 @@
 stats_file = open("stats.txt", 'r')
-values = stats_file.split(',')
-books_in_stock = values[0]
-books_lended = values[1]
+for record in stats_file:
+  values = record.split(',')
+  global books_in_stock = values[0]
+  global books_lended = values[1]
 
 def book_return(quantity):
   books_in_stock += quantity
@@ -24,12 +25,18 @@ def menu():
   
   if option == 'R':
     quantity = int(input("Enter the quantity of books to be returned\n--> "))
-    while quantity.
+    while type(quantity) != int:
+      quantity = int(input("Enter the quantity of books to be returned\n--> "))
     book_return(quantity)
   elif option == 'L':
     quantity = int(input("Enter the quantity of books to be lended\n--> "))
-    while quantity.isnum() is not True:
+    while type(quantity) != int:
       quantity = int(input("Enter the quantity of books to be lended\n--> "))
     book_lend(quantity)
   elif option == 'S':
     view_stats()
+
+
+# main program
+menu()
+stats_file.close()
