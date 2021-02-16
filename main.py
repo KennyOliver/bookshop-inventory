@@ -14,11 +14,19 @@ def view_stats(books_in_stock,books_lended):
   print(f"Books in stock:\t{books_in_stock}".format(books_in_stock))
   print(f"Books lended:\t{books_lended}".format(books_lended))
 #====================
-def menu(books_in_stock,books_lended):
+def menu():
+  
+  stats_file = open("stats.txt",'r')
+  for record in stats_file:
+    values = record.split(',')
+    books_in_stock = int(values[0])
+    books_lended = int(values[1])
+  
   print("Pick action:\n\t[R] Return\n\t[L] Lend\n\t[S] View Stats")
   option = input("--> ").upper()
   
   while option not in ['R','L','S']:
+    print("Invalid option")
     option = input("--> ").upper()
   
   if option == 'R':
@@ -44,15 +52,13 @@ def write_data(new_stocking,new_lending):
   stats_file = open("stats.txt",'w')
   stats_file.write(str(new_stocking) + ',' + str(new_lending))
   stats_file.close()
-
-
-
+#====================
 # main program
-stats_file = open("stats.txt",'r')
-for record in stats_file:
-  values = record.split(',')
-  books_in_stock = int(values[0])
-  books_lended = int(values[1])
+option = 'Y'
+while option in ['Y','YES']:
+  menu()
+  option = input("Would you like to rerun the application?\n\t[Y] Yes\n\t[N] No\n\t--> ").upper()
+print("Program terminated.")
 
-menu(books_in_stock,books_lended)
+
 stats_file.close()
