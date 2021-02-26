@@ -1,9 +1,9 @@
-# bookshop-inventory
+# library-inventory :classical_building:
 
-![image](https://www.codefactor.io/repository/github/KennyOliver/bookshop-inventory/badge?style=for-the-badge)
+![image](https://www.codefactor.io/repository/github/KennyOliver/library-inventory/badge?style=for-the-badge)
 
-[![](https://repl.it/badge/github/KennyOliver/repl-name)](https://repl.it/@KennyOliver/bookshop-inventory)
+[![](https://repl.it/badge/github/KennyOliver/library-inventory)](https://repl.it/@KennyOliver/library-inventory)
 
-:classical_building: Inventory for a bookshop
+Inventory for a library
 
 Kenny Oliver ©2021
